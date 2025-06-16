@@ -17,7 +17,7 @@ Threat Hunter é uma plataforma  de análise de segurança cibernética que util
 - **📚 Rastreamento Histórico**: Trilha de auditoria completa de todas as análises
 - **🔐 Autenticação Segura**: Sistema de autenticação baseado em JWT (JSON Web Tokens no Python)
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Frontend
 - **React 18** - Framework para construção de interfaces
@@ -34,7 +34,7 @@ Threat Hunter é uma plataforma  de análise de segurança cibernética que util
 - **Python-JOSE** - Implementação JWT para Python
 - **Passlib** - Biblioteca para hash de senhas
 
-## 🚀 Instalação e Execução
+## Instalação e Execução
 
 ### Pré-requisitos
 - Python 3.11+
