@@ -90,7 +90,7 @@ O backend estará disponível em `http://localhost:8000`
 
 O frontend estará disponível em `http://localhost:5173`
 
-## 📖 Como Usar
+## Como Usar
 
 ### 1. Registro e Login
 - Acesse a aplicação em `http://localhost:5173`
