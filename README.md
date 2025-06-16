@@ -82,12 +82,12 @@ O backend estará disponível em `http://localhost:8000`
 
 2. **Instale as dependências:**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 3. **Execute o servidor de desenvolvimento:**
    ```bash
-   npm start
+   npm run dev
    ```
 
 O frontend estará disponível em `http://localhost:5173`
