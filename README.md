@@ -6,26 +6,25 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
-## 📋 Descrição
+## Descrição
 
-Threat Hunter é uma plataforma avançada de análise de segurança cibernética que utiliza inteligência artificial para detectar e analisar ameaças em arquivos de log. O sistema é capaz de identificar diversos tipos de ataques, incluindo aqueles listados no OWASP Top 10, fornecendo análises detalhadas e insights acionáveis.
+Threat Hunter é uma plataforma  de análise de segurança cibernética que utiliza inteligência artificial (a ideia é poder expandir isso com diversas IAs, mas por agora, o sistema de IA está treinando em Scikit-learn) para detectar e analisar ameaças em arquivos de log. O sistema é capaz de identificar diversos tipos de ataques, incluindo aqueles listados no OWASP Top 10, fornecendo análises detalhadas.
 
-## ✨ Características Principais
+## Características Principais
 
 - **🔍 Detecção Avançada de Ameaças**: IA para identificar ameaças OWASP Top 10 e outros vetores de ataque
 - **⚡ Análise em Tempo Real**: Processamento instantâneo de logs e identificação de ameaças
 - **📊 Dashboard Interativo**: Visualização de métricas de segurança e tendências
 - **📚 Rastreamento Histórico**: Trilha de auditoria completa de todas as análises
-- **🌐 Interface Cyberpunk**: Tema escuro profissional com acentos neon
-- **🔐 Autenticação Segura**: Sistema de autenticação baseado em JWT
+- **🔐 Autenticação Segura**: Sistema de autenticação baseado em JWT (JSON Web Tokens no Python)
 
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
 - **React 18** - Framework para construção de interfaces
 - **TypeScript** - Tipagem estática para JavaScript
-- **Tailwind CSS** - Framework CSS utility-first
-- **Recharts** - Biblioteca de gráficos para React
+- **Tailwind CSS** - Framework CSS 
+- **Recharts** - Biblioteca de gráficos instalada para React que utilizei no Dashboard
 - **Vite** - Build tool e servidor de desenvolvimento
 
 ### Backend
@@ -41,7 +40,7 @@ Threat Hunter é uma plataforma avançada de análise de segurança cibernética
 ### Pré-requisitos
 - Python 3.11+
 - Node.js 18+
-- npm ou yarn
+- npm 
 
 ### Backend
 
@@ -108,7 +107,7 @@ O frontend estará disponível em `http://localhost:5173`
 - **Histórico**: Acesse o histórico completo de análises com opção de ver detalhes
 - **Detalhes**: Clique em "Details" para ver informações completas sobre uma análise específica
 
-## 🔒 Tipos de Ameaças Detectadas
+## Tipos de Ameaças Detectadas
 
 O sistema é capaz de detectar os seguintes tipos de ataques:
 
@@ -119,7 +118,7 @@ O sistema é capaz de detectar os seguintes tipos de ataques:
 - **🔨 Brute Force**: Ataques de força bruta em autenticação
 - **👁️ Suspicious Activity**: Padrões de atividade anômalos
 
-## 📊 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 threat-hunter/
@@ -141,9 +140,9 @@ threat-hunter/
 └── README.md               # Este arquivo
 ```
 
-## 🎨 Tema Visual
+## Tema Visual
 
-O projeto utiliza um tema cyberpunk profissional com:
+Tentei me inspirar em uma temática cyberpunk:
 
 - **Cores principais:**
   - Fundo: `#0f0f0f`
@@ -157,7 +156,7 @@ O projeto utiliza um tema cyberpunk profissional com:
   - Animações de scan nos cards
   - Fonte JetBrains Mono
 
-## 🔧 API Endpoints
+## API Endpoints
 
 ### Autenticação
 - `POST /register` - Registro de usuário
@@ -169,31 +168,8 @@ O projeto utiliza um tema cyberpunk profissional com:
 - `GET /history` - Histórico de análises
 - `GET /history/{log_id}` - Detalhes de uma análise específica
 
-## 🤝 Contribuição
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 👥 Autores
-
-- **Threat Hunter Team** - Desenvolvimento inicial
-
-## 🙏 Agradecimentos
-
-- OWASP Foundation pelos padrões de segurança
-- Comunidade open source pelas ferramentas utilizadas
-- Profissionais de segurança cibernética pela inspiração
-
 ---
 
-**© 2024 Threat Hunter - Advanced Cybersecurity Analysis Platform**
+**© 2025 Threat Hunter - Advanced Cybersecurity Analysis Platform**
 
 *Built with React, FastAPI, and AI-powered threat detection*
-
