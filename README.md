@@ -133,7 +133,7 @@ threat-hunter/
 │   ├── src/
 │   │   ├── components/      # Componentes React
 │   │   ├── App.jsx         # Componente principal
-│   │   └── App.css         # Estilos cyberpunk
+│   │   └── App.css         # Estilos 
 │   ├── package.json        # Dependências Node.js
 │   └── index.html          # Template HTML
 └── README.md               # Este arquivo
