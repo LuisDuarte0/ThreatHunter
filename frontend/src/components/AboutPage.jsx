@@ -2,53 +2,53 @@ import React from 'react';
 
 const AboutPage = ({ onNavigate }) => {
   const technologies = [
-    { name: 'React', icon: '⚛️', description: 'Frontend framework for building user interfaces' },
-    { name: 'Tailwind CSS', icon: '🎨', description: 'Utility-first CSS framework for styling' },
-    { name: 'FastAPI', icon: '🚀', description: 'Modern Python web framework for APIs' },
-    { name: 'SQLite', icon: '🗄️', description: 'Lightweight database for data storage' },
-    { name: 'Scikit-learn', icon: '🧠', description: 'Machine learning library for threat detection' },
-    { name: 'Recharts', icon: '📊', description: 'React charting library for data visualization' }
+    { name: 'React', icon: '⚛️', description: 'Framework frontend para construir interfaces de usuário' },
+    { name: 'Tailwind CSS', icon: '🎨', description: 'Framework CSS utilitário para estilização' },
+    { name: 'FastAPI', icon: '🚀', description: 'Framework web moderno em Python para APIs' },
+    { name: 'SQLite', icon: '🗄️', description: 'Banco de dados leve para armazenamento de dados' },
+    { name: 'Scikit-learn', icon: '🧠', description: 'Biblioteca de machine learning para detecção de ameaças' },
+    { name: 'Recharts', icon: '📊', description: 'Biblioteca React para visualização de gráficos' }
   ];
 
   const features = [
-    { title: 'Advanced Threat Detection', icon: '🔍', description: 'AI-powered analysis to identify OWASP Top 10 threats and more' },
-    { title: 'Real-time Analysis', icon: '⚡', description: 'Instant log processing and threat identification' },
-    { title: 'Interactive Dashboard', icon: '📊', description: 'Visual representation of security metrics and trends' },
-    { title: 'Historical Tracking', icon: '📚', description: 'Complete audit trail of all security analyses' },
-    { title: 'Cyberpunk Interface', icon: '🌐', description: 'Professional dark theme with neon accents' },
-    { title: 'Secure Authentication', icon: '🔐', description: 'JWT-based authentication system' }
+    { title: 'Detecção Avançada de Ameaças', icon: '🔍', description: 'Análise com IA capaz de identificar ameaças críticas, como as do OWASP Top 10, e outras tentativas suspeitas.' },
+    { title: 'Análise em Tempo Real', icon: '⚡', description: 'Processamento instantâneo de arquivos de log com identificação imediata de padrões de ataque.' },
+    { title: 'Dashboard Interativo', icon: '📊', description: 'Visualização gráfica de métricas de segurança e tendências de atividades maliciosas.' },
+    { title: 'Rastreamento Histórico', icon: '📚', description: 'Registro completo e detalhado de todas as análises realizadas.' },
+    { title: 'Interface Cyberpunk', icon: '🌐', description: 'Tema escuro com toques neon, inspirado em um estilo Cyberpunk futurista.' },
+    { title: 'Autenticação Segura', icon: '🔐', description: 'Sistema de login robusto utilizando autenticação baseada em JWT.' }
   ];
 
   return (
     <div className="max-w-6xl mx-auto p-6">
       <div className="mb-8">
-        <h1 className="glitch text-3xl font-bold mb-4" data-text="ABOUT THREAT HUNTER">
-          ABOUT THREAT HUNTER
+        <h1 className="glitch text-3xl font-bold mb-4 text-center" data-text="ABOUT THREAT HUNTER">
+          SOBRE
         </h1>
-        <p className="text-muted-foreground text-lg">
-          Advanced cybersecurity analysis platform for threat detection and log analysis
+        <p className="text-muted-foreground text-lg text-center">
+          Plataforma de análise cibernética avançada para detecção de ameaças e análise de logs
         </p>
       </div>
 
-      {/* Project Overview */}
+      {/* Visão Geral do Projeto */}
       <div className="cyber-card mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-primary">Project Overview</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-primary text-center">Visão Geral do Projeto</h2>
         <p className="text-foreground leading-relaxed mb-4">
-          Threat Hunter is a comprehensive cybersecurity analysis platform designed to help security professionals 
-          identify and analyze potential threats in log files. Using advanced artificial intelligence and machine 
-          learning techniques, the platform can detect various types of attacks including those listed in the 
-          OWASP Top 10, providing detailed analysis and actionable insights.
+          Threat Hunter é uma plataforma abrangente de análise cibernética projetada para ajudar profissionais de segurança 
+          a identificar e analisar ameaças potenciais em arquivos de log. Utilizando inteligência artificial avançada e técnicas 
+          de machine learning, a plataforma consegue detectar diversos tipos de ataques, incluindo os listados no OWASP Top 10, 
+          oferecendo análises detalhadas e insights acionáveis.
         </p>
         <p className="text-foreground leading-relaxed">
-          The platform combines modern web technologies with sophisticated threat detection algorithms to deliver 
-          a professional-grade security analysis tool. With its cyberpunk-inspired interface and real-time 
-          processing capabilities, Threat Hunter makes cybersecurity analysis both powerful and visually engaging.
+          A plataforma combina tecnologias web modernas com algoritmos sofisticados de detecção de ameaças para entregar 
+          uma ferramenta profissional de análise de segurança. Com sua interface inspirada no estilo cyberpunk e capacidades 
+          de processamento em tempo real, o Threat Hunter torna a análise de segurança tanto poderosa quanto visualmente envolvente.
         </p>
       </div>
 
-      {/* Key Features */}
+      {/* Principais Funcionalidades */}
       <div className="cyber-card mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-primary">Key Features</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-primary text-center">Principais Funcionalidades</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <div key={index} className="p-4 rounded border border-border bg-muted/30 hover:bg-muted/50 transition-colors">
@@ -62,9 +62,9 @@ const AboutPage = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Technology Stack */}
+      {/* Tecnologia Utilizada */}
       <div className="cyber-card mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-primary">Technology Stack</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-primary text-center">Tecnologias Utilizadas</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technologies.map((tech, index) => (
             <div key={index} className="p-4 rounded border border-border bg-muted/30 hover:bg-muted/50 transition-colors">
@@ -78,18 +78,18 @@ const AboutPage = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* OWASP Threat Detection */}
+      {/* Detecção de Ameaças - OWASP */}
       <div className="cyber-card mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-primary">OWASP Threat Detection</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-primary text-center">Detecção de Ameaças - OWASP</h2>
         <p className="text-foreground mb-4">
-          Our AI-powered analysis engine is specifically designed to identify threats from the OWASP Top 10 
-          and other common attack vectors:
+          Nosso motor de análise com IA foi projetado especificamente para identificar ameaças da lista OWASP Top 10 
+          e outros vetores comuns de ataque:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-3">
             <div className="flex items-center space-x-3">
               <span className="text-destructive">💉</span>
-              <span>SQL Injection Attacks</span>
+              <span>SQL Injection</span>
             </div>
             <div className="flex items-center space-x-3">
               <span className="text-accent">🔗</span>
@@ -107,74 +107,45 @@ const AboutPage = ({ onNavigate }) => {
             </div>
             <div className="flex items-center space-x-3">
               <span className="text-accent">🔨</span>
-              <span>Brute Force Attacks</span>
+              <span>Brute Force</span>
             </div>
             <div className="flex items-center space-x-3">
               <span className="text-primary">👁️</span>
-              <span>Suspicious Activity Patterns</span>
+              <span>Atividades Suspeitas</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Security & Privacy */}
-      <div className="cyber-card mb-8">
-        <h2 className="text-2xl font-semibold mb-6 text-primary">Security & Privacy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center">
-            <div className="text-4xl mb-3">🔒</div>
-            <h3 className="font-semibold mb-2">Secure Authentication</h3>
-            <p className="text-sm text-muted-foreground">
-              JWT-based authentication with secure password hashing
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-3">🛡️</div>
-            <h3 className="font-semibold mb-2">Data Protection</h3>
-            <p className="text-sm text-muted-foreground">
-              All data is processed securely with encryption at rest
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-3">⚡</div>
-            <h3 className="font-semibold mb-2">Fast Processing</h3>
-            <p className="text-sm text-muted-foreground">
-              Optimized algorithms for real-time threat analysis
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Call to Action */}
+      {/* Chamada para Ação */}
       <div className="cyber-card text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-primary">Ready to Start?</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-primary">Pronto para Começar?</h2>
         <p className="text-muted-foreground mb-6">
-          Begin analyzing your log files and detecting threats with our advanced AI-powered platform.
+          Comece a analisar seus arquivos de log e detectar ameaças com nossa plataforma avançada com IA.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => onNavigate('upload')}
             className="cyber-button neon-glow px-8 py-3"
           >
-            Upload Log File
+            Enviar Arquivo de Log
           </button>
           <button
             onClick={() => onNavigate('dashboard')}
             className="cyber-button px-8 py-3"
           >
-            View Dashboard
+            Ver Dashboard
           </button>
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Rodapé */}
       <div className="mt-12 text-center text-sm text-muted-foreground">
-        <p>© 2024 Threat Hunter - Advanced Cybersecurity Analysis Platform</p>
-        <p className="mt-2">Built with React, FastAPI, and AI-powered threat detection</p>
+        <p>© 2024 Threat Hunter - Plataforma de Análise Cibernética Avançada</p>
+        <p className="mt-2">Construído com React, FastAPI e detecção de ameaças com IA</p>
       </div>
     </div>
   );
 };
 
 export default AboutPage;
-

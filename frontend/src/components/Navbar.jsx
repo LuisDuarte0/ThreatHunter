@@ -4,16 +4,17 @@ const Navbar = ({ currentPage, onNavigate }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊' },
     { id: 'upload', label: 'Upload Logs', icon: '📤' },
-    { id: 'history', label: 'History', icon: '📚' },
-    { id: 'about', label: 'About', icon: 'ℹ️' }
+    { id: 'history', label: 'Histórico', icon: '📚' },
+    { id: 'about', label: 'Sobre', icon: 'ℹ️' }
   ];
 
   return (
     <nav className="bg-card border-b border-border p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
+          <img src="/icone-threat-hunter.png" alt="Threat Hunter Logo" className="w-6 h-6 sm:w-8 sm:h-8 scale-125 sm:scale-150 -ml-1" />
           <h1 
-            className="glitch text-2xl font-bold cursor-pointer"
+            className="glitch text-3xl sm:text-4xl font-bold leading-none cursor-pointer"
             data-text="THREAT HUNTER"
             onClick={() => onNavigate('dashboard')}
           >
@@ -42,7 +43,7 @@ const Navbar = ({ currentPage, onNavigate }) => {
           onClick={() => onNavigate('login')}
           className="cyber-button-danger"
         >
-          Logout
+          Sair
         </button>
       </div>
       

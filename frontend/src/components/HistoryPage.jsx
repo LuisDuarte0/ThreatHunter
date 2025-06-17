@@ -35,11 +35,11 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
           localStorage.removeItem('token');
           onNavigate('login');
         } else {
-          setError(data.detail || 'Failed to load history');
+          setError(data.detail || 'Falha ao carregar o histórico');
         }
       }
     } catch (err) {
-      setError('Connection error. Please check if the backend is running.');
+      setError('Erro de conexão. Verifique se o backend está em execução.');
     } finally {
       setLoading(false);
     }
@@ -61,10 +61,10 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
         setShowDetails(true);
         onAnalysisSelect(data);
       } else {
-        setError(data.detail || 'Failed to load log details');
+        setError(data.detail || 'Falha ao carregar os detalhes do log');
       }
     } catch (err) {
-      setError('Failed to load log details');
+      setError('Falha ao carregar os detalhes do log');
     }
   };
 
@@ -92,7 +92,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading history...</p>
+            <p className="text-muted-foreground">Carregando histórico...</p>
           </div>
         </div>
       </div>
@@ -102,11 +102,11 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
   return (
     <div className="max-w-7xl mx-auto p-6">
       <div className="mb-8">
-        <h1 className="glitch text-3xl font-bold mb-4" data-text="ANALYSIS HISTORY">
-          ANALYSIS HISTORY
+        <h1 className="glitch text-3xl font-bold mb-4 text-center" data-text="HISTÓRICO DE ANÁLISES">
+          HISTÓRICO DE ANÁLISES
         </h1>
-        <p className="text-muted-foreground">
-          Complete history of your log analysis and threat detection results
+        <p className="text-muted-foreground text-center">
+          Histórico completo das análises de logs e resultados de detecção de ameaças
         </p>
       </div>
 
@@ -116,7 +116,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
             {error}
           </div>
           <Button onClick={fetchHistory} className="cyber-button mt-4">
-            Retry
+            Tentar novamente
           </Button>
         </div>
       )}
@@ -125,23 +125,22 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
         <div className="cyber-card text-center">
           <div className="py-12">
             <div className="text-6xl mb-4">📊</div>
-            <h3 className="text-xl font-semibold mb-2">No Analysis History</h3>
+            <h3 className="text-xl font-semibold mb-2">Nenhuma Análise Encontrada</h3>
             <p className="text-muted-foreground mb-6">
-              You haven't analyzed any log files yet. Upload your first log file to get started.
+              Você ainda não analisou nenhum arquivo de log. Envie seu primeiro para começar.
             </p>
             <Button onClick={() => onNavigate('upload')} className="cyber-button neon-glow">
-              Upload Log File
+              ENVIAR ARQUIVO DE LOG
             </Button>
           </div>
         </div>
       ) : (
         <div className="space-y-6">
-          {/* History List */}
           <div className="cyber-card">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-semibold text-primary">Log Analysis History</h2>
+              <h2 className="text-xl font-semibold text-primary">Histórico de Análises de Log</h2>
               <Button onClick={fetchHistory} className="cyber-button">
-                Refresh
+                Atualizar
               </Button>
             </div>
 
@@ -149,13 +148,13 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="text-left p-3 text-muted-foreground">Date</th>
-                    <th className="text-left p-3 text-muted-foreground">File</th>
-                    <th className="text-left p-3 text-muted-foreground">IP Address</th>
-                    <th className="text-left p-3 text-muted-foreground">Attack Type</th>
-                    <th className="text-left p-3 text-muted-foreground">Severity</th>
-                    <th className="text-left p-3 text-muted-foreground">Confidence</th>
-                    <th className="text-left p-3 text-muted-foreground">Actions</th>
+                    <th className="text-left p-3 text-muted-foreground">Data</th>
+                    <th className="text-left p-3 text-muted-foreground">Arquivo</th>
+                    <th className="text-left p-3 text-muted-foreground">Endereço IP</th>
+                    <th className="text-left p-3 text-muted-foreground">Tipo de Ataque</th>
+                    <th className="text-left p-3 text-muted-foreground">Gravidade</th>
+                    <th className="text-left p-3 text-muted-foreground">Confiança</th>
+                    <th className="text-left p-3 text-muted-foreground">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -196,7 +195,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
                           onClick={() => fetchLogDetails(log.id)}
                           className="cyber-button text-xs px-3 py-1"
                         >
-                          Details
+                          Detalhes
                         </Button>
                       </td>
                     </tr>
@@ -206,12 +205,11 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
             </div>
           </div>
 
-          {/* Details Modal */}
           {showDetails && selectedLog && (
             <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
               <div className="cyber-card max-w-2xl w-full max-h-[80vh] overflow-y-auto">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-xl font-semibold text-primary">Analysis Details</h2>
+                  <h2 className="text-xl font-semibold text-primary">Detalhes da Análise</h2>
                   <button
                     onClick={() => setShowDetails(false)}
                     className="cyber-button-danger px-3 py-1"
@@ -223,11 +221,11 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-muted-foreground">File Name</p>
+                      <p className="text-sm text-muted-foreground">Nome do Arquivo</p>
                       <p className="font-medium">{selectedLog.filename}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Analysis Date</p>
+                      <p className="text-sm text-muted-foreground">Data da Análise</p>
                       <p className="font-medium font-mono">
                         {new Date(selectedLog.created_at).toLocaleString()}
                       </p>
@@ -236,11 +234,11 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-muted-foreground">IP Address</p>
+                      <p className="text-sm text-muted-foreground">Endereço IP</p>
                       <p className="font-medium font-mono">{selectedLog.ip_address}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">Severity Level</p>
+                      <p className="text-sm text-muted-foreground">Nível de Gravidade</p>
                       <p className={`font-medium ${getSeverityColor(selectedLog.severity)}`}>
                         {selectedLog.severity}
                       </p>
@@ -248,12 +246,12 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
                   </div>
 
                   <div>
-                    <p className="text-sm text-muted-foreground">Attack Type</p>
+                    <p className="text-sm text-muted-foreground">Tipo de Ataque</p>
                     <p className="font-medium">{selectedLog.attack_type}</p>
                   </div>
 
                   <div>
-                    <p className="text-sm text-muted-foreground">Confidence Score</p>
+                    <p className="text-sm text-muted-foreground">Pontuação de Confiança</p>
                     <div className="flex items-center space-x-2">
                       <div className="flex-1 bg-muted rounded-full h-3">
                         <div
@@ -269,7 +267,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
 
                   {selectedLog.details && (
                     <div>
-                      <p className="text-sm text-muted-foreground">Analysis Details</p>
+                      <p className="text-sm text-muted-foreground">Detalhes da Análise</p>
                       <div className="bg-muted p-4 rounded font-mono text-sm">
                         {selectedLog.details}
                       </div>
@@ -281,7 +279,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
                       onClick={() => setShowDetails(false)}
                       className="cyber-button flex-1"
                     >
-                      Close
+                      Fechar
                     </Button>
                     <Button
                       onClick={() => {
@@ -290,7 +288,7 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
                       }}
                       className="cyber-button flex-1"
                     >
-                      View Dashboard
+                      Ver Dashboard
                     </Button>
                   </div>
                 </div>
@@ -304,4 +302,3 @@ const HistoryPage = ({ onAnalysisSelect, onNavigate }) => {
 };
 
 export default HistoryPage;
-

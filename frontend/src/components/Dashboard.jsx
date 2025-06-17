@@ -14,7 +14,7 @@ const Dashboard = ({ analysisData }) => {
     try {
       const token = localStorage.getItem('token');
       if (!token) {
-        setError('Please login first');
+        setError('Por favor, faça login primeiro');
         return;
       }
 
@@ -29,10 +29,10 @@ const Dashboard = ({ analysisData }) => {
       if (response.ok) {
         setDashboardData(data);
       } else {
-        setError(data.detail || 'Failed to load dashboard data');
+        setError(data.detail || 'Falha ao carregar os dados do dashboard');
       }
     } catch (err) {
-      setError('Connection error. Please check if the backend is running.');
+      setError('Erro de conexão. Verifique se o backend está em execução.');
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ const Dashboard = ({ analysisData }) => {
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading dashboard...</p>
+            <p className="text-muted-foreground">Carregando o dashboard...</p>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ const Dashboard = ({ analysisData }) => {
         <div className="cyber-card text-center">
           <p className="text-destructive mb-4">{error}</p>
           <button onClick={fetchDashboardData} className="cyber-button">
-            Retry
+            Tentar novamente
           </button>
         </div>
       </div>
@@ -89,50 +89,49 @@ const Dashboard = ({ analysisData }) => {
   return (
     <div className="max-w-7xl mx-auto p-6">
       <div className="mb-8">
-        <h1 className="glitch text-3xl font-bold mb-4" data-text="DASHBOARD">
+        <h1 className="glitch text-3xl font-bold mb-4 text-center" data-text="DASHBOARD">
           DASHBOARD
         </h1>
-        <p className="text-muted-foreground">
-          Real-time threat analysis and security monitoring
+        <p className="text-muted-foreground text-center">
+          Análise de ameaças em tempo real e monitoramento de segurança
         </p>
       </div>
 
-      {/* Stats Overview */}
+      {/* Visão Geral de Estatísticas */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
         <div className="cyber-card text-center">
           <div className="text-3xl font-bold text-primary mb-2">
             {dashboardData?.total_logs || 0}
           </div>
-          <div className="text-sm text-muted-foreground">Total Logs Analyzed</div>
+          <div className="text-sm text-muted-foreground">Total de logs analisados</div>
         </div>
-        
+
         <div className="cyber-card text-center">
           <div className="text-3xl font-bold text-destructive mb-2">
             {dashboardData?.severity_distribution?.High || 0}
           </div>
-          <div className="text-sm text-muted-foreground">High Severity Threats</div>
+          <div className="text-sm text-muted-foreground">Ameaças de alta gravidade</div>
         </div>
-        
+
         <div className="cyber-card text-center">
           <div className="text-3xl font-bold text-accent mb-2">
             {dashboardData?.severity_distribution?.Medium || 0}
           </div>
-          <div className="text-sm text-muted-foreground">Medium Severity Threats</div>
+          <div className="text-sm text-muted-foreground">Ameaças de gravidade média</div>
         </div>
-        
+
         <div className="cyber-card text-center">
           <div className="text-3xl font-bold text-primary mb-2">
             {dashboardData?.severity_distribution?.Low || 0}
           </div>
-          <div className="text-sm text-muted-foreground">Low Severity Threats</div>
+          <div className="text-sm text-muted-foreground">Ameaças de baixa gravidade</div>
         </div>
       </div>
 
-      {/* Charts */}
+      {/* Gráficos */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        {/* Attack Types Pie Chart */}
         <div className="cyber-card">
-          <h2 className="text-xl font-semibold mb-4 text-primary">Attack Types Distribution</h2>
+          <h2 className="text-xl font-semibold mb-4 text-primary">Distribuição dos tipos de ataque</h2>
           {dashboardData?.attack_types?.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
@@ -155,14 +154,13 @@ const Dashboard = ({ analysisData }) => {
             </ResponsiveContainer>
           ) : (
             <div className="h-64 flex items-center justify-center text-muted-foreground">
-              No attack data available
+              Nenhum dado de ataque disponível
             </div>
           )}
         </div>
 
-        {/* Top IPs Bar Chart */}
         <div className="cyber-card">
-          <h2 className="text-xl font-semibold mb-4 text-primary">Top Source IPs</h2>
+          <h2 className="text-xl font-semibold mb-4 text-primary">Principais IPs de origem</h2>
           {dashboardData?.top_ips?.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={dashboardData.top_ips}>
@@ -181,25 +179,25 @@ const Dashboard = ({ analysisData }) => {
             </ResponsiveContainer>
           ) : (
             <div className="h-64 flex items-center justify-center text-muted-foreground">
-              No IP data available
+              Nenhum dado de IP disponível
             </div>
           )}
         </div>
       </div>
 
-      {/* Recent Logs */}
+      {/* Logs Recentes */}
       <div className="cyber-card">
-        <h2 className="text-xl font-semibold mb-4 text-primary">Recent Log Analysis</h2>
+        <h2 className="text-xl font-semibold mb-4 text-primary">Análises recentes de logs</h2>
         {dashboardData?.recent_logs?.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left p-3 text-muted-foreground">Timestamp</th>
-                  <th className="text-left p-3 text-muted-foreground">File</th>
-                  <th className="text-left p-3 text-muted-foreground">IP Address</th>
-                  <th className="text-left p-3 text-muted-foreground">Attack Type</th>
-                  <th className="text-left p-3 text-muted-foreground">Severity</th>
+                  <th className="text-left p-3 text-muted-foreground">Data e Hora</th>
+                  <th className="text-left p-3 text-muted-foreground">Arquivo</th>
+                  <th className="text-left p-3 text-muted-foreground">Endereço IP</th>
+                  <th className="text-left p-3 text-muted-foreground">Tipo de Ataque</th>
+                  <th className="text-left p-3 text-muted-foreground">Gravidade</th>
                 </tr>
               </thead>
               <tbody>
@@ -227,15 +225,14 @@ const Dashboard = ({ analysisData }) => {
           </div>
         ) : (
           <div className="text-center py-8 text-muted-foreground">
-            No recent logs available. Upload some log files to see analysis results.
+            Nenhuma análise recente. Envie arquivos de log para visualizar os resultados.
           </div>
         )}
       </div>
 
-      {/* Refresh Button */}
       <div className="mt-6 text-center">
         <button onClick={fetchDashboardData} className="cyber-button neon-glow">
-          Refresh Data
+          ATUALIZAR DADOS
         </button>
       </div>
     </div>
@@ -243,4 +240,3 @@ const Dashboard = ({ analysisData }) => {
 };
 
 export default Dashboard;
-

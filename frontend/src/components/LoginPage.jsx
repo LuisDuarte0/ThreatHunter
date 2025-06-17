@@ -36,19 +36,17 @@ const LoginPage = ({ onNavigate }) => {
 
       if (response.ok) {
         if (isLogin) {
-          // Salvar token no localStorage
           localStorage.setItem('token', data.access_token);
           onNavigate('dashboard');
         } else {
-          // Após registro, fazer login automaticamente
           setIsLogin(true);
-          setError('Registration successful! Please login.');
+          setError('Cadastro realizado com sucesso! Faça login.');
         }
       } else {
-        setError(data.detail || 'An error occurred');
+        setError(data.detail || 'Ocorreu um erro');
       }
     } catch (err) {
-      setError('Connection error. Please check if the backend is running.');
+      setError('Erro de conexão. Verifique se o backend está em execução.');
     } finally {
       setLoading(false);
     }
@@ -58,6 +56,11 @@ const LoginPage = ({ onNavigate }) => {
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="cyber-card w-full max-w-md">
         <div className="text-center mb-8">
+          <img 
+            src="/icone-threat-hunter.png" 
+            alt="Threat Hunter Logo" 
+            className="mx-auto w-16 h-16 mb-2"
+          />
           <h1 
             className="glitch text-3xl font-bold mb-2"
             data-text="THREAT HUNTER"
@@ -65,14 +68,14 @@ const LoginPage = ({ onNavigate }) => {
             THREAT HUNTER
           </h1>
           <p className="text-muted-foreground">
-            {isLogin ? 'Access the cybersecurity platform' : 'Join the threat hunting community'}
+            {isLogin ? 'Acesse a plataforma de cibersegurança' : 'Participe da comunidade de caçadores de ameaças'}
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email Address
+              Email
             </label>
             <input
               type="email"
@@ -81,14 +84,14 @@ const LoginPage = ({ onNavigate }) => {
               value={formData.email}
               onChange={handleInputChange}
               className="cyber-input w-full"
-              placeholder="user@example.com"
+              placeholder="usuario@exemplo.com"
               required
             />
           </div>
 
           <div>
             <label htmlFor="password" className="block text-sm font-medium mb-2">
-              Password
+              Senha
             </label>
             <input
               type="password"
@@ -113,7 +116,7 @@ const LoginPage = ({ onNavigate }) => {
             disabled={loading}
             className="cyber-button w-full neon-glow"
           >
-            {loading ? 'Processing...' : (isLogin ? 'Login' : 'Register')}
+            {loading ? 'Processando...' : (isLogin ? 'Entrar' : 'Registrar')}
           </Button>
         </form>
 
@@ -128,18 +131,16 @@ const LoginPage = ({ onNavigate }) => {
             className="text-primary hover:text-primary/80 transition-colors"
           >
             {isLogin 
-              ? "Don't have an account? Register here" 
-              : "Already have an account? Login here"
-            }
+              ? 'Não tem uma conta? Cadastre-se aqui' 
+              : 'Já tem uma conta? Faça login aqui'}
           </button>
         </div>
 
         <div className="mt-8 text-center text-xs text-muted-foreground">
-          <p>Secure • Encrypted • Professional</p>
+          <p>Feito por Luis Duarte</p>
           <div className="flex justify-center space-x-4 mt-2">
             <span className="text-primary">🔒</span>
-            <span className="text-accent">🛡️</span>
-            <span className="text-primary">⚡</span>
+            <span className="text-accent">🔍</span>
           </div>
         </div>
       </div>
@@ -148,4 +149,3 @@ const LoginPage = ({ onNavigate }) => {
 };
 
 export default LoginPage;
-
