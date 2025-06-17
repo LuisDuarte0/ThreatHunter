@@ -168,7 +168,3 @@ Tentei me inspirar em uma temática cyberpunk:
 - `GET /history/{log_id}` - Detalhes de uma análise específica
 
 ---
-
-**© 2025 Threat Hunter - Advanced Cybersecurity Analysis Platform**
-
-*Built with React, FastAPI, and AI-powered threat detection*
