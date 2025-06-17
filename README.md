@@ -27,11 +27,11 @@ Threat Hunter é uma plataforma  de análise de segurança cibernética que util
 - **Vite** - Build tool e servidor de desenvolvimento
 
 ### Backend
-- **FastAPI** - Framework Python moderno para APIs
+- **Scikit-learn** - Biblioteca de machine learning (em Python)
+- **FastAPI** - Framework para APIs (em Python)
 - **SQLAlchemy** - ORM para Python
-- **SQLite** - Banco de dados leve
-- **Scikit-learn** - Biblioteca de machine learning
-- **Python-JOSE** - Implementação JWT para Python
+- **SQLite** - Banco de dados bem leve
+- **Python-JOSE** - Implementação JWT para Python (usei para a autentificação de usuários)
 - **Passlib** - Biblioteca para hash de senhas
 
 ## Instalação e Execução
