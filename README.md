@@ -7,7 +7,7 @@
 
 ## Descrição
 
-Threat Hunter é uma plataforma  de análise de segurança cibernética que utiliza inteligência artificial (a ideia é poder expandir isso com diversas IAs, mas por agora, o sistema de IA está treinando em Scikit-learn) para detectar e analisar ameaças em arquivos de log. O sistema é capaz de identificar diversos tipos de ataques, incluindo aqueles listados no OWASP Top 10, fornecendo análises detalhadas.
+Plataforma  de análise de segurança cibernética que utiliza inteligência artificial (a ideia é poder expandir o projeto com outras IAs, mas por agora, o sistema de IA está treinando em Scikit-learn) para detectar e analisar ameaças em arquivos de log. O sistema é capaz de identificar diversos tipos de ataques, incluindo aqueles listados no OWASP Top 10, fornecendo análises detalhadas.
 
 **Características Principais**
 
